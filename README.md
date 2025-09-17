@@ -2,42 +2,27 @@
 
 This is a docker image for the project: http://dan.corlan.net/software/emulators/felix-assiris/
 
-## To use it
+## Usage
 
 As image name you can use:
-- `vvang/felix:0.3.1` - the image built by me from docker registry
-- `docker.io/vvang/felix:0.3.1` - the same image, to be used in podman commandsi
-- `felix:0.3.1` - if you build your own local image
+- `vvang/felix:0.3.2` - the image built by me from docker registry
+- `docker.io/vvang/felix:0.3.2` - the same image, to be used in podman commandsi
+- `felix:0.3.2` - if you build your own local image
 
-To build your own image, clone this repo and run `docker buildx build --platform linux/amd64 -t felix:0.3.1 .`.
+To build your own image, clone this repo and run `docker buildx build --platform linux/amd64 -t felix:0.3.2 .`.
 
-Podman run example:
+Interactive run - get a shell inside container and play with *felix*:
 ```
-podman run -d --name felix docker.io/vvang/felix:0.3.1
-```
-
-## Interactive use
-```
-docker run -d --name felix felix:0.3.1  # start a container
-docker ps | grep felix                # check if it's running
-
-docker exec -ti felix bash            # "enter" inside container
-  # run stuff in container, for example
-  felix <help.assiris
-  [...]
-  felix <hello.assiris
-  [...]
-  ...
-  exit
-
+docker run -ti --rm felix:0.3.2  bash
+    felix -h
+    [...]
+    exit
 ```
 
-## Run once use
-
-This will create a temporary container and run the file `help.assiris`:
-
+Compile and run, read from STDIN, output to STDOUT, cleanup the container after exit:
 ```
-docker run --rm -v $PWD/help.assiris:/help.assiris felix:0.3.1 help.assiris
+docker run -i --rm felix:0.3.2 felix <help.assiris
+[...]
 ```
 
 ## To build it
@@ -45,10 +30,10 @@ docker run --rm -v $PWD/help.assiris:/help.assiris felix:0.3.1 help.assiris
 This is how I build and push for https://hub.docker.com/repository/docker/vvang/felix/general :
 
 ```
-docker buildx build --platform linux/amd64 -t felix:0.3.1 .
+docker buildx build --platform linux/amd64 -t felix:0.3.2 .
 
 # optional
-docker tag felix:0.3 vvang/felix:0.3.1
-docker push vvang/felix:0.3.1
+docker tag felix:0.3 vvang/felix:0.3.2
+docker push vvang/felix:0.3.2
 ```
 

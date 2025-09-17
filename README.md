@@ -6,10 +6,13 @@ This is a docker image for the project: http://dan.corlan.net/software/emulators
 
 As image name you can use:
 - `vvang/felix:0.3.2` - the image built by me from docker registry
-- `docker.io/vvang/felix:0.3.2` - the same image, to be used in podman commandsi
+- `docker.io/vvang/felix:0.3.2` - the same image, to be used in podman commands
 - `felix:0.3.2` - if you build your own local image
 
-To build your own image, clone this repo and run `docker buildx build --platform linux/amd64 -t felix:0.3.2 .`.
+To build your own image, clone this repo and run 
+```
+docker buildx build --platform linux/amd64 -t felix:0.3.2 .
+```
 
 Interactive run - get a shell inside container and play with *felix*:
 ```

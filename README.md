@@ -30,8 +30,11 @@ docker exec -ti felix bash            # "enter" inside container
 
 ## To build it
 
-- clone this repo
-- `docker buildx build --platform linux/amd64 -t felix:0.3 .`
-- optional tag and push the image to a registry
+This is how I build and push for https://hub.docker.com/repository/docker/vvang/felix/general :
 
+```
+docker buildx build --platform linux/amd64 -t felix:0.3 .`
+docker tag felix:0.3 vvang/felix:0.3
+docker push vvang/felix:0.3
+```
 

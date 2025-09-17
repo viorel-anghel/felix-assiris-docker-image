@@ -5,9 +5,9 @@ This is a docker image for the project: http://dan.corlan.net/software/emulators
 ## To use it
 
 As image name you can use:
-- vvang/felix:0.3 - the image built by me from docker registry
-- docker.io/vvang/felix:0.3 - the same image, to be used in podman commands since on ~podman
-- felix:0.3 - if you build your own local image
+- `vvang/felix:0.3` - the image built by me from docker registry
+- `docker.io/vvang/felix:0.3` - the same image, to be used in podman commandsi
+- `felix:0.3` - if you build your own local image
 
 To build your own image, clone this repo and run `docker buildx build --platform linux/amd64 -t felix:0.3 .`.
 
@@ -34,7 +34,7 @@ docker exec -ti felix bash            # "enter" inside container
 
 ## Run once use
 
-This create a temporary container and run the file `help.assiris`:
+This will create a temporary container and run the file `help.assiris`:
 
 ```
 docker run --rm -v $PWD/help.assiris:/help.assiris felix:0.3 help.assiris

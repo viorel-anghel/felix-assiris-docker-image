@@ -1,6 +1,6 @@
 # Felix Assiris docker image
 
-This is a docker image for the the project: http://dan.corlan.net/software/emulators/felix-assiris/
+This is a docker image for the project: http://dan.corlan.net/software/emulators/felix-assiris/
 
 ## To use it
 
@@ -33,7 +33,7 @@ docker exec -ti felix bash            # "enter" inside container
 This is how I build and push for https://hub.docker.com/repository/docker/vvang/felix/general :
 
 ```
-docker buildx build --platform linux/amd64 -t felix:0.3 .`
+docker buildx build --platform linux/amd64 -t felix:0.3 .
 docker tag felix:0.3 vvang/felix:0.3
 docker push vvang/felix:0.3
 ```
